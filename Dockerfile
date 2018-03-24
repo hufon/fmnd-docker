@@ -43,7 +43,7 @@ RUN a2enmod headers                 \
  # Install and setup composer
 RUN curl -sS https://getcomposer.org/installer | php           \
 &&  mv composer.phar /usr/local/bin/composer
-RUN usermod -aG root apache2
+RUN usermod -aG root www-data
 
 RUN sed -i 's!/var/www/html!/var/www/html/web!g' /etc/apache2/sites-available/000-default.conf \
 && mkdir /var/www/html/var && chmod 777 /var/www/html/var
