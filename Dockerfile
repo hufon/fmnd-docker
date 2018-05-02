@@ -37,6 +37,9 @@ RUN touch /usr/local/etc/php/conf.d/memory.ini                                  
 && echo "memory_limit = 512M" > /usr/local/etc/php/conf.d/memory.ini                    \
 && echo "variables_order = \"EGPCS\"" > /usr/local/etc/php/conf.d/variable_order.ini
 
+RUN touch /usr/local/etc/php/conf.d/upload.ini                                          \
+&& echo "upload_max_filesize = 100M" > /usr/local/etc/php/conf.d/upload.ini
+
 RUN a2enmod headers                 \
 && a2enmod rewrite
 
