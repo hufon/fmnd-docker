@@ -8,6 +8,7 @@ git                                 \
 libicu-dev                          \
 libmcrypt-dev                       \
 libpng-dev                          \
+libjpeg-dev                         \
 libxml2-dev                         \
 nano                                \
 vim                                 \
