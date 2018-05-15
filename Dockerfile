@@ -18,7 +18,10 @@ dnsutils                            \
 libxslt-dev                         \
 && apt-get clean
 
+
 # Install PHP extensions
+RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/include/
+
 RUN docker-php-ext-install          \
 gd                                  \
 intl                                \
