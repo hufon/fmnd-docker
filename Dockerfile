@@ -37,6 +37,10 @@ zip
 RUN pecl install apcu-beta                                                              \
   && echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini
 
+#Install redis
+RUN pecl install redis                                                              \
+  && echo extension=redis.so > /usr/local/etc/php/conf.d/redis.ini
+
 RUN touch /usr/local/etc/php/conf.d/memory.ini                                          \
 && echo "memory_limit = 512M" > /usr/local/etc/php/conf.d/memory.ini                    \
 && echo "variables_order = \"EGPCS\"" > /usr/local/etc/php/conf.d/variable_order.ini
