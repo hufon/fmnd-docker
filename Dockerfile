@@ -10,6 +10,7 @@ libmcrypt-dev                       \
 libpng-dev                          \
 libjpeg-dev                         \
 libxml2-dev                         \
+libxml2-utils                       \
 nano                                \
 vim                                 \
 nodejs                              \
