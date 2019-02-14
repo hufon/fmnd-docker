@@ -49,6 +49,11 @@ RUN touch /usr/local/etc/php/conf.d/memory.ini                                  
 RUN touch /usr/local/etc/php/conf.d/upload.ini                                          \
 && echo "upload_max_filesize = 100M" > /usr/local/etc/php/conf.d/upload.ini
 
+RUN touch /usr/local/etc/php/conf.d/opcache.ini                                          \
+&& echo "opcache.max_accelerated_files=20000" > /usr/local/etc/php/conf.d/opcache.ini    \
+&& echo "opcache.memory_consumption=256" >> /usr/local/etc/php/conf.d/opcache.ini    \
+&& echo "opcache.memory_consumption=256" >> /usr/local/etc/php/conf.d/opcache.ini 
+
 RUN a2enmod headers                 \
 && a2enmod rewrite
 
