@@ -44,6 +44,7 @@ RUN pecl install redis                                                          
 
 RUN touch /usr/local/etc/php/conf.d/memory.ini                                          \
 && echo "memory_limit = 512M" > /usr/local/etc/php/conf.d/memory.ini                    \
+&& echo "date.timezone = \"Europe/Paris\"" > /usr/local/etc/php/conf.d/datetime.ini        \
 && echo "variables_order = \"EGPCS\"" > /usr/local/etc/php/conf.d/variable_order.ini
 
 RUN touch /usr/local/etc/php/conf.d/upload.ini                                          \
