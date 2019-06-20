@@ -28,20 +28,17 @@ RUN docker-php-ext-install          \
 gd                                  \
 intl                                \
 mbstring                            \
-mcrypt                              \
 opcache                             \
 pdo_mysql                           \
 soap                                \
 xsl                                 \
-zip
-
-#Install apcu
-RUN pecl install apcu-beta                                                              \
-  && echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini
-
-#Install redis
-RUN pecl install redis                                                              \
-  && echo extension=redis.so > /usr/local/etc/php/conf.d/redis.ini
+zip \
+&& pecl install apcu-beta                                   \
+&& echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini \
+&& pecl install redis                                                              \
+&& echo extension=redis.so > /usr/local/etc/php/conf.d/redis.ini \
+&& rm -Rf "$(pecl config-get temp_dir)/*" \
+&& pecl clear-cache 
 
 RUN touch /usr/local/etc/php/conf.d/memory.ini                                          \
 && echo "memory_limit = 2G" > /usr/local/etc/php/conf.d/memory.ini                    \
