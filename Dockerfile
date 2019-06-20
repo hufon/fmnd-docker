@@ -1,4 +1,4 @@
-FROM php:7.1-apache
+FROM php:7.2-apache
 
 # Install needed software and dependencies
 RUN DEBIAN_FRONTEND=noninteractive  \
@@ -17,6 +17,7 @@ nodejs                              \
 mysql-client                        \
 dnsutils                            \
 libxslt-dev                         \
+unzip                               \
 && apt-get clean
 
 
