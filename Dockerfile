@@ -14,7 +14,7 @@ libxml2-utils                       \
 nano                                \
 vim                                 \
 nodejs                              \
-mysql-client                        \
+mariadb-client                      \
 dnsutils                            \
 libxslt-dev                         \
 unzip                               \
