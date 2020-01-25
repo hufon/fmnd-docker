@@ -18,6 +18,7 @@ mariadb-client                      \
 dnsutils                            \
 libxslt-dev                         \
 unzip                               \
+rsync                               \
 && apt-get clean
 
 
